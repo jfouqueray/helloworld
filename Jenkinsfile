@@ -6,7 +6,7 @@ node {
         //git url: 'https://github.com/jfouqueray/helloworld.git'
         checkout scm
         def mvnHome = tool 'Maven 3.3.9'
-        sh "${mvnHome}/bin/mvn -B -f demo/pom.xml install"
+        sh "${mvnHome}/bin/mvn -B -f pom.xml install"
         slackSend: 'END'
 
         stage 'Deploy DEV'
