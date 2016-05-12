@@ -3,7 +3,7 @@
 node {
     try {
         stage 'Build'
-        // git url: 'https://github.com/jfouqueray/helloworld.git'
+        //git url: 'https://github.com/jfouqueray/helloworld.git'
         checkout scm
         def mvnHome = tool 'Maven 3.3.9'
         sh "${mvnHome}/bin/mvn -B -f demo/pom.xml install"
