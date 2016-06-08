@@ -9,18 +9,16 @@ node {
         sh "${mvnHome}/bin/mvn -B -f pom.xml install"
         //slackSend: 'END'
 
-        stage 'Deploy DEV'
+        stage 'Build Docker image'
         sh "docker build -t jfouqueray/helloworld"
-        echo 'Deployment in DEV'
+        echo 'Build Docker image'
 
-        stage 'Test DEV'
-        echo 'Testing in DEV'
+        stage 'Run docker image'
+        echo 'Run docker image'
 
-        stage 'Deploy UAT'
-        echo 'Deployment in UAT'
+        stage 'Push image into registry'
+        echo 'Push image into registry'
 
-        stage 'Test UAT'
-        echo 'Testing in UAT'
         //slackSend message: "SUCCESS: ${env.JOB_NAME} #${env.BUILD_NUMBER}", color: "#00CC00"
     }
     catch (caughtError) {
