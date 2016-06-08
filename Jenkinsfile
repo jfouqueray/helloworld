@@ -10,6 +10,7 @@ node {
         slackSend: 'END'
 
         stage 'Deploy DEV'
+        docker.build("alecharp/simpleapp")
         echo 'Deployment in DEV'
 
         stage 'Test DEV'
