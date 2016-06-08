@@ -10,7 +10,7 @@ node {
         slackSend: 'END'
 
         stage 'Deploy DEV'
-        docker.build("alecharp/simpleapp")
+        sh "docker build -t jfouqueray/helloworld"
         echo 'Deployment in DEV'
 
         stage 'Test DEV'
