@@ -10,7 +10,8 @@ node {
         //slackSend: 'END'
 
         stage 'Build Docker image'
-        sh "docker build -t jfouqueray/helloworld"
+        //sh "docker build -t jfouqueray/helloworld"
+        image = docker.build("jfouqueray/helloworld")
         echo 'Build Docker image'
 
         stage 'Run docker image'
